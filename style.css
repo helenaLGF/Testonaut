@@ -84,7 +84,7 @@ input[type="text"], input[type="email"], input[type="file"], button {
 }
 
 button {
-  background-color: #007bff;
+  background-color: #000;
   color: white;
   padding: 0.8rem 1.5rem;
   border: none;

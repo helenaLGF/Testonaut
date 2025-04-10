@@ -29,7 +29,30 @@
     </select>
     <div id="roleAlert" class="alert hidden">Le rôle est requis.</div>
 
-    <!-- Upload -->
+    <!-- Boutons radio -->
+    <div class="radio-group">
+      <label>Sexe :</label><br/>
+      <input type="radio" id="homme" name="gender" value="homme">
+      <label for="homme">Homme</label><br/>
+      <input type="radio" id="femme" name="gender" value="femme">
+      <label for="femme">Femme</label><br/>
+      <input type="radio" id="autre" name="gender" value="autre">
+      <label for="autre">Autre</label><br/>
+    </div>
+    <div id="genderAlert" class="alert hidden">Sélectionnez un sexe.</div>
+
+    <!-- Checkboxes -->
+    <div class="checkbox-group">
+      <label>Langages testés :</label><br/>
+      <input type="checkbox" id="java" name="langage" value="java" />
+      <label for="java">Java</label><br/>
+      <input type="checkbox" id="python" name="langage" value="python" />
+      <label for="python">Python</label><br/>
+      <input type="checkbox" id="js" name="langage" value="js" />
+      <label for="js">JavaScript</label>
+    </div>
+
+    <!-- Zone d'upload de fichier -->
     <label for="fileUpload">Upload de fichier :</label>
     <input type="file" id="fileUpload" name="fileUpload" />
     <div id="fileAlert" class="alert hidden">Seuls les fichiers PDF sont acceptés.</div>

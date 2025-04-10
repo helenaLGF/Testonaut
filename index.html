@@ -3,67 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <title>Mini IDE TestAuto - Démo</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 2rem;
-      background-color: #f4f4f4;
-    }
-    .container {
-      background-color: #fff;
-      padding: 2rem;
-      border-radius: 8px;
-      max-width: 700px;
-      margin: auto;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-    h2 {
-      text-align: center;
-    }
-    input[type="text"], input[type="email"], input[type="file"], select {
-      width: 100%;
-      padding: 0.5rem;
-      margin-top: 0.5rem;
-      margin-bottom: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-    .checkbox-group, .radio-group {
-      margin-bottom: 1rem;
-    }
-    button {
-      background-color: #007bff;
-      color: white;
-      padding: 0.7rem 1.5rem;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #0056b3;
-    }
-    label {
-      font-weight: bold;
-    }
-    .success-message {
-      display: none;
-      margin-top: 1rem;
-      color: green;
-      font-weight: bold;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
     <h2>Démo TestAuto – Mini IDE</h2>
 
-    <!-- Input classique -->
+    <!-- Nom d'utilisateur -->
     <label for="username">Nom d'utilisateur :</label>
     <input type="text" id="username" name="username" placeholder="Votre nom ici" />
+    <div id="usernameAlert" class="alert hidden">Le nom d'utilisateur est requis !</div>
 
     <!-- Email -->
     <label for="email">Email :</label>
     <input type="email" id="email" name="email" placeholder="exemple@mail.com" />
+    <div id="emailAlert" class="alert hidden">Veuillez entrer un email valide.</div>
 
     <!-- Sélecteur déroulant -->
     <label for="role">Rôle :</label>
@@ -73,71 +27,27 @@
       <option value="user">Utilisateur</option>
       <option value="guest">Invité</option>
     </select>
-
-    <!-- Boutons radio -->
-    <div class="radio-group">
-      <label>Sexe :</label><br/>
-      <input type="radio" id="homme" name="gender" value="homme">
-      <label for="homme">Homme</label><br/>
-      <input type="radio" id="femme" name="gender" value="femme">
-      <label for="femme">Femme</label><br/>
-      <input type="radio" id="autre" name="gender" value="autre">
-      <label for="autre">Autre</label>
-    </div>
-
-    <!-- Checkboxes -->
-    <div class="checkbox-group">
-      <label>Langages testés :</label><br/>
-      <input type="checkbox" id="java" name="langage" value="java" />
-      <label for="java">Java</label><br/>
-      <input type="checkbox" id="python" name="langage" value="python" />
-      <label for="python">Python</label><br/>
-      <input type="checkbox" id="js" name="langage" value="js" />
-      <label for="js">JavaScript</label>
-    </div>
+    <div id="roleAlert" class="alert hidden">Le rôle est requis.</div>
 
     <!-- Upload -->
     <label for="fileUpload">Upload de fichier :</label>
     <input type="file" id="fileUpload" name="fileUpload" />
+    <div id="fileAlert" class="alert hidden">Seuls les fichiers PDF sont acceptés.</div>
 
     <!-- Bouton Réinit -->
     <div style="margin-top: 1.5rem;">
       <button type="button" id="resetPasswordBtn">Réinitialiser le mot de passe</button>
     </div>
 
-    <!-- Bouton de validation -->
+    <!-- Message succès -->
+    <div id="success" class="success-message hidden">Formulaire soumis avec succès !</div>
+
+    <!-- Validation -->
     <div style="margin-top: 1.5rem;">
       <button type="submit" onclick="submitForm()">Soumettre</button>
     </div>
-
-    <!-- Message succès -->
-    <div id="success" class="success-message">Formulaire soumis avec succès !</div>
   </div>
 
-  <script>
-    document.getElementById("resetPasswordBtn").addEventListener("click", function () {
-      const email = document.getElementById("email").value;
-      if (email) {
-        alert("Un lien de réinitialisation a été envoyé à : " + email);
-      } else {
-        alert("Veuillez entrer un email pour réinitialiser.");
-      }
-    });
-
-    function submitForm() {
-      const username = document.getElementById("username").value;
-      const role = document.getElementById("role").value;
-      if (username && role) {
-        document.getElementById("success").style.display = "block";
-        console.log("Formulaire soumis avec :", {
-          username: username,
-          email: document.getElementById("email").value,
-          role: role
-        });
-      } else {
-        alert("Merci de remplir les champs obligatoires.");
-      }
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>

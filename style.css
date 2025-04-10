@@ -1,3 +1,4 @@
+/* Design global */
 body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
@@ -5,6 +6,40 @@ body {
   padding: 0;
 }
 
+/* Menu de navigation */
+.navbar {
+  background-color: #2e8b57; /* Vert foncé */
+  padding: 1rem;
+  text-align: center;
+}
+
+.navbar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar-menu li {
+  margin: 0 20px;
+}
+
+.navbar-menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.navbar-menu a:hover {
+  background-color: #d3d3d3; /* Gris clair sur hover */
+  transform: scale(1.05); /* Légère augmentation de taille au survol */
+}
+
+/* Conteneur principal */
 .container {
   width: 80%;
   max-width: 800px;
@@ -21,24 +56,12 @@ h2 {
 }
 
 h3 {
-  color: #007bff;
+  color: #2e8b57; /* Vert clair */
   margin-bottom: 0.8rem;
 }
 
 .form-section {
   margin-bottom: 2rem;
-}
-
-.radio-group input[type="radio"],
-.checkbox-group input[type="checkbox"] {
-  display: inline-block;
-  margin-right: 10px;
-}
-
-.radio-group label,
-.checkbox-group label {
-  display: inline-block;
-  margin-right: 20px; /* Espace entre les options */
 }
 
 label {
@@ -47,6 +70,7 @@ label {
   margin-top: 1rem;
 }
 
+/* Inputs */
 input[type="text"], input[type="email"], input[type="file"] {
   width: 100%;
   padding: 0.8rem;
@@ -63,8 +87,22 @@ input[type="radio"], input[type="checkbox"] {
   margin-left: 20px;
 }
 
+/* Groupes radio et checkbox */
+.radio-group input[type="radio"],
+.checkbox-group input[type="checkbox"] {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.radio-group label,
+.checkbox-group label {
+  display: inline-block;
+  margin-right: 20px; /* Espace entre les options */
+}
+
+/* Boutons */
 button {
-  background-color: #007bff;
+  background-color: #2e8b57; /* Vert foncé */
   color: white;
   padding: 0.8rem 1.5rem;
   border: none;
@@ -76,9 +114,11 @@ button {
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #228b22; /* Vert plus foncé au survol */
+  transform: scale(1.05);
 }
 
+/* Alertes et messages */
 .alert {
   color: #d9534f;
   font-size: 0.9rem;
@@ -91,6 +131,55 @@ button:hover {
   margin-top: 1rem;
 }
 
+.hidden {
+  display: none;
+}
+
+/* Styles supplémentaires pour les éléments de formulaire */
+input[type="radio"], input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.checkbox-group,
+.radio-group {
+  margin-left: 20px;
+}
+
+label {
+  font-weight: bold;
+  display: block;
+  margin-top: 1rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="file"] {
+  width: 100%;
+  padding: 0.8rem;
+  margin-top: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+/* Styles de l'alerte */
+.alert {
+  color: #d9534f;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.success-message {
+  color: #5bc0de;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+/* Masquer les éléments cachés */
 .hidden {
   display: none;
 }

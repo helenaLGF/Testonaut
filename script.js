@@ -21,7 +21,7 @@ function submitForm() {
 
   // Validation de l'email
   const email = document.getElementById("email").value;
-  const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+  const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA0-9]{2,6}$/;
   if (!email || !emailPattern.test(email)) {
     document.getElementById("emailAlert").classList.remove("hidden");
     valid = false;
@@ -48,6 +48,15 @@ function submitForm() {
     } else {
       document.getElementById("fileAlert").classList.add("hidden");
     }
+  }
+
+  // Validation des radios
+  const gender = document.querySelector('input[name="gender"]:checked');
+  if (!gender) {
+    document.getElementById("genderAlert").classList.remove("hidden");
+    valid = false;
+  } else {
+    document.getElementById("genderAlert").classList.add("hidden");
   }
 
   // Affichage du message de succès

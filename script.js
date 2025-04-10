@@ -1,68 +1,62 @@
-document.getElementById("resetPasswordBtn").addEventListener("click", function () {
-  const email = document.getElementById("email").value;
-  if (email) {
-    alert("Un lien de réinitialisation a été envoyé à : " + email);
-  } else {
-    alert("Veuillez entrer un email pour réinitialiser.");
-  }
-});
-
-function submitForm() {
+document.getElementById("submitBtn").addEventListener("click", function (event) {
   let valid = true;
 
-  // Validation du champ username
+  // Réinitialiser les alertes
+  document.querySelectorAll(".alert").forEach(alert => alert.classList.add("hidden"));
+
+  // Validation du nom d'utilisateur
   const username = document.getElementById("username").value;
   if (!username) {
     document.getElementById("usernameAlert").classList.remove("hidden");
     valid = false;
-  } else {
-    document.getElementById("usernameAlert").classList.add("hidden");
   }
 
   // Validation de l'email
   const email = document.getElementById("email").value;
-  const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA0-9]{2,6}$/;
-  if (!email || !emailPattern.test(email)) {
+  if (!email || !email.includes('@')) {
     document.getElementById("emailAlert").classList.remove("hidden");
     valid = false;
-  } else {
-    document.getElementById("emailAlert").classList.add("hidden");
   }
 
-  // Validation du rôle
-  const role = document.getElementById("role").value;
-  if (!role) {
-    document.getElementById("roleAlert").classList.remove("hidden");
-    valid = false;
-  } else {
-    document.getElementById("roleAlert").classList.add("hidden");
-  }
-
-  // Validation de l'upload (limite PDF)
-  const fileUpload = document.getElementById("fileUpload").files[0];
-  if (fileUpload) {
-    const fileType = fileUpload.type;
-    if (fileType !== "application/pdf") {
-      document.getElementById("fileAlert").classList.remove("hidden");
-      valid = false;
-    } else {
-      document.getElementById("fileAlert").classList.add("hidden");
+  // Validation des options radio
+  const radioButtons = document.getElementsByName("preference");
+  let radioChecked = false;
+  for (let i = 0; i < radioButtons.length; i++) {
+    if (radioButtons[i].checked) {
+      radioChecked = true;
+      break;
     }
   }
-
-  // Validation des radios
-  const gender = document.querySelector('input[name="gender"]:checked');
-  if (!gender) {
-    document.getElementById("genderAlert").classList.remove("hidden");
+  if (!radioChecked) {
+    document.getElementById("radioAlert").classList.remove("hidden");
     valid = false;
-  } else {
-    document.getElementById("genderAlert").classList.add("hidden");
   }
 
-  // Affichage du message de succès
-  if (valid) {
-    document.getElementById("success").style.display = "block";
+  // Validation du fichier
+  const fileInput = document.getElementById("fileUpload");
+  const file = fileInput.files[0];
+  if (file) {
+    const fileType = file.type;
+    const fileSize = file.size / 1024 / 1024; // Taille en Mo
+    if (fileType !== "application/pdf") {
+      document.getElementById("fileAlert").innerText = "Seuls les fichiers PDF sont acceptés.";
+      document.getElementById("fileAlert").classList.remove("hidden");
+      valid = false;
+    } else if (fileSize > 10) {
+      document.getElementById("fileAlert").innerText = "Le fichier doit être inférieur à 10 Mo.";
+      document.getElementById("fileAlert").classList.remove("hidden");
+      valid = false;
+    }
   } else {
-    document.getElementById("success").style.display = "none";
+    document.getElementById("fileAlert").innerText = "Veuillez sélectionner un fichier.";
+    document.getElementById("fileAlert").classList.remove("hidden");
+    valid = false;
   }
-}
+
+  // Si tout est valide, afficher le message de succès
+  if (valid) {
+    document.getElementById("success").classList.remove("hidden");
+  } else {
+    event.preventDefault(); // Empêche l'envoi du formulaire si une validation échoue
+  }
+});

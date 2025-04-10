@@ -1,4 +1,4 @@
-/* Design global */
+/* Style global */
 body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
@@ -8,8 +8,8 @@ body {
 
 /* Menu de navigation */
 .navbar {
-  background-color: #2e8b57; /* Vert foncé */
-  padding: 1rem;
+  background-color: #006400; /* Vert foncé */
+  padding: 1rem 0;
   text-align: center;
 }
 
@@ -22,21 +22,21 @@ body {
 }
 
 .navbar-menu li {
-  margin: 0 20px;
+  margin: 0 1rem;
 }
 
 .navbar-menu a {
-  color: white;
   text-decoration: none;
+  color: white;
+  font-weight: bold;
   font-size: 1.2rem;
-  padding: 10px 20px;
+  transition: background-color 0.3s ease;
+  padding: 0.5rem 1rem;
   border-radius: 4px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .navbar-menu a:hover {
-  background-color: #d3d3d3; /* Gris clair sur hover */
-  transform: scale(1.05); /* Légère augmentation de taille au survol */
+  background-color: #d3d3d3; /* Gris clair au survol */
 }
 
 /* Conteneur principal */
@@ -50,16 +50,20 @@ body {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Logo */
+.logo img {
+  display: block;
+  margin: 0 auto;
+  max-width: 150px;
+}
+
+/* Titre */
 h2 {
   text-align: center;
   color: #333;
 }
 
-h3 {
-  color: #2e8b57; /* Vert clair */
-  margin-bottom: 0.8rem;
-}
-
+/* Section de formulaire */
 .form-section {
   margin-bottom: 2rem;
 }
@@ -70,8 +74,8 @@ label {
   margin-top: 1rem;
 }
 
-/* Inputs */
-input[type="text"], input[type="email"], input[type="file"] {
+/* Inputs et boutons */
+input[type="text"], input[type="email"], input[type="file"], button {
   width: 100%;
   padding: 0.8rem;
   margin-top: 0.5rem;
@@ -79,107 +83,41 @@ input[type="text"], input[type="email"], input[type="file"] {
   border-radius: 4px;
 }
 
-input[type="radio"], input[type="checkbox"] {
-  margin-right: 10px;
-}
-
-.radio-group, .checkbox-group {
-  margin-left: 20px;
-}
-
-/* Groupes radio et checkbox */
-.radio-group input[type="radio"],
-.checkbox-group input[type="checkbox"] {
-  display: inline-block;
-  margin-right: 10px;
-}
-
-.radio-group label,
-.checkbox-group label {
-  display: inline-block;
-  margin-right: 20px; /* Espace entre les options */
-}
-
-/* Boutons */
 button {
-  background-color: #2e8b57; /* Vert foncé */
+  background-color: #007bff;
   color: white;
   padding: 0.8rem 1.5rem;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  display: block;
-  width: 100%;
-  margin-top: 1rem;
 }
 
 button:hover {
-  background-color: #228b22; /* Vert plus foncé au survol */
-  transform: scale(1.05);
+  background-color: #0056b3;
 }
 
-/* Alertes et messages */
-.alert {
-  color: #d9534f;
-  font-size: 0.9rem;
-  margin-top: 0.5rem;
-}
-
-.success-message {
-  color: #5bc0de;
-  font-size: 1rem;
-  margin-top: 1rem;
-}
-
-.hidden {
-  display: none;
-}
-
-/* Styles supplémentaires pour les éléments de formulaire */
-input[type="radio"], input[type="checkbox"] {
-  margin-right: 10px;
-}
-
-.checkbox-group,
-.radio-group {
+/* Groupes radio et checkboxes */
+.radio-group, .checkbox-group {
   margin-left: 20px;
 }
 
-label {
-  font-weight: bold;
-  display: block;
-  margin-top: 1rem;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="file"] {
-  width: 100%;
-  padding: 0.8rem;
-  margin-top: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-input[type="radio"],
-input[type="checkbox"] {
+.radio-group input[type="radio"], .checkbox-group input[type="checkbox"] {
   margin-right: 10px;
 }
 
-/* Styles de l'alerte */
-.alert {
-  color: #d9534f;
-  font-size: 0.9rem;
-  margin-top: 0.5rem;
-}
-
-.success-message {
-  color: #5bc0de;
+.success-message, .alert {
   font-size: 1rem;
   margin-top: 1rem;
 }
 
-/* Masquer les éléments cachés */
+.alert {
+  color: #d9534f;
+}
+
+.success-message {
+  color: #5bc0de;
+}
+
 .hidden {
   display: none;
 }

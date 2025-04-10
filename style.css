@@ -20,7 +20,9 @@ h2 {
 input[type="text"],
 input[type="email"],
 input[type="file"],
-select {
+select,
+input[type="radio"],
+input[type="checkbox"] {
   width: 100%;
   padding: 0.5rem;
   margin-top: 0.5rem;

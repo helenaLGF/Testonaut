@@ -1,0 +1,60 @@
+/* Style global */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+.container {
+  max-width: 960px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+  color: #005580;
+}
+
+ul {
+  list-style-type: square;
+  padding-left: 20px;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #005580;
+  padding: 10px 0;
+}
+
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-menu li {
+  margin: 0 10px;
+}
+
+.navbar-menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 6px 12px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.navbar-menu a:hover,
+.navbar-menu a.active {
+  background-color: #0077aa;
+}

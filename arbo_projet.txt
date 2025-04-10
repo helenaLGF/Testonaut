@@ -1,0 +1,25 @@
+portfolio/
+│
+├── index.html                       # Page d'accueil ("Home")
+│
+├── pages/                           # Toutes les autres pages
+│   ├── selenium.html                # Test avec Selenium
+│   ├── jenkins.html                 # Builds Jenkins
+│   ├── github.html                  # GitHub
+│   ├── api-tests.html               # Test API
+│   ├── seo.html                     # SEO
+│   ├── cv.html                      # Curriculum Vitae
+│   └── playwright.html             # Test avec Playwright
+│
+├── css/
+│   └── style.css                    # Style global
+│
+├── js/
+│   └── script.js                    # Script global (ex. pour la navbar)
+│
+├── images/
+│   └── logo.png                     # Logo ou autres visuels
+│
+└── assets/
+    ├── cv.pdf                       # CV en PDF
+    └── other-docs/                 # Autres documents ou fichiers annexes

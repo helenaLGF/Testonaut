@@ -9,66 +9,61 @@
   <div class="container">
     <h2>Démo TestAuto – Mini IDE</h2>
 
-    <!-- Nom d'utilisateur -->
-    <label for="username">Nom d'utilisateur :</label>
-    <input type="text" id="username" name="username" placeholder="Votre nom ici" />
-    <div id="usernameAlert" class="alert hidden">Le nom d'utilisateur est requis !</div>
+    <!-- Section des Inputs -->
+    <section class="form-section">
+      <h3>Saisie de données</h3>
 
-    <!-- Email -->
-    <label for="email">Email :</label>
-    <input type="email" id="email" name="email" placeholder="exemple@mail.com" />
-    <div id="emailAlert" class="alert hidden">Veuillez entrer un email valide.</div>
+      <!-- Nom d'utilisateur -->
+      <label for="username">Nom d'utilisateur :</label>
+      <input type="text" id="username" name="username" placeholder="Votre nom ici" />
+      <div id="usernameAlert" class="alert hidden">Le nom d'utilisateur est requis !</div>
 
-    <!-- Sélecteur déroulant -->
-    <label for="role">Rôle :</label>
-    <select id="role" name="role">
-      <option value="">-- Choisir --</option>
-      <option value="admin">Administrateur</option>
-      <option value="user">Utilisateur</option>
-      <option value="guest">Invité</option>
-    </select>
-    <div id="roleAlert" class="alert hidden">Le rôle est requis.</div>
+      <!-- Email -->
+      <label for="email">Email :</label>
+      <input type="email" id="email" name="email" placeholder="exemple@mail.com" />
+      <div id="emailAlert" class="alert hidden">Veuillez entrer un email valide.</div>
+    </section>
 
-    <!-- Boutons radio -->
-    <div class="radio-group">
-      <label>Sexe :</label><br/>
-      <input type="radio" id="homme" name="gender" value="homme">
-      <label for="homme">Homme</label><br/>
-      <input type="radio" id="femme" name="gender" value="femme">
-      <label for="femme">Femme</label><br/>
-      <input type="radio" id="autre" name="gender" value="autre">
-      <label for="autre">Autre</label><br/>
-    </div>
-    <div id="genderAlert" class="alert hidden">Sélectionnez un sexe.</div>
+    <!-- Section des Options -->
+    <section class="form-section">
+      <h3>Options</h3>
+      
+      <!-- Boutons Radio -->
+      <label>Choisissez votre préférence :</label>
+      <div class="radio-group">
+        <input type="radio" id="option1" name="preference" value="Option A" />
+        <label for="option1">Option A</label><br />
+        <input type="radio" id="option2" name="preference" value="Option B" />
+        <label for="option2">Option B</label><br />
+        <input type="radio" id="option3" name="preference" value="Option C" />
+        <label for="option3">Option C</label>
+      </div>
+      <div id="radioAlert" class="alert hidden">Veuillez choisir une option.</div>
 
-    <!-- Checkboxes -->
-    <div class="checkbox-group">
-      <label>Langages testés :</label><br/>
-      <input type="checkbox" id="java" name="langage" value="java" />
-      <label for="java">Java</label><br/>
-      <input type="checkbox" id="python" name="langage" value="python" />
-      <label for="python">Python</label><br/>
-      <input type="checkbox" id="js" name="langage" value="js" />
-      <label for="js">JavaScript</label>
-    </div>
+      <!-- Checkboxes -->
+      <label>Options supplémentaires :</label><br />
+      <input type="checkbox" id="check1" name="checkbox" />
+      <label for="check1">Option A</label><br />
+      <input type="checkbox" id="check2" name="checkbox" />
+      <label for="check2">Option B</label><br />
+      <input type="checkbox" id="check3" name="checkbox" />
+      <label for="check3">Option C</label><br />
+    </section>
 
-    <!-- Zone d'upload de fichier -->
-    <label for="fileUpload">Upload de fichier :</label>
-    <input type="file" id="fileUpload" name="fileUpload" />
-    <div id="fileAlert" class="alert hidden">Seuls les fichiers PDF sont acceptés.</div>
+    <!-- Section de téléchargement de fichier -->
+    <section class="form-section">
+      <h3>Upload de fichier</h3>
 
-    <!-- Bouton Réinit -->
-    <div style="margin-top: 1.5rem;">
-      <button type="button" id="resetPasswordBtn">Réinitialiser le mot de passe</button>
-    </div>
+      <label for="fileUpload">Sélectionnez un fichier (PDF max 10 Mo) :</label>
+      <input type="file" id="fileUpload" name="fileUpload" accept="application/pdf" />
+      <div id="fileAlert" class="alert hidden">Seuls les fichiers PDF de moins de 10 Mo sont acceptés.</div>
+    </section>
 
-    <!-- Message succès -->
-    <div id="success" class="success-message hidden">Formulaire soumis avec succès !</div>
-
-    <!-- Validation -->
-    <div style="margin-top: 1.5rem;">
-      <button type="submit" onclick="submitForm()">Soumettre</button>
-    </div>
+    <!-- Section de soumission du formulaire -->
+    <section class="form-section">
+      <button type="submit" id="submitBtn">Soumettre</button>
+      <div id="success" class="success-message hidden">Formulaire soumis avec succès !</div>
+    </section>
   </div>
 
   <script src="script.js"></script>

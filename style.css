@@ -29,6 +29,18 @@ h3 {
   margin-bottom: 2rem;
 }
 
+.radio-group input[type="radio"],
+.checkbox-group input[type="checkbox"] {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.radio-group label,
+.checkbox-group label {
+  display: inline-block;
+  margin-right: 20px; /* Espace entre les options */
+}
+
 label {
   font-weight: bold;
   display: block;

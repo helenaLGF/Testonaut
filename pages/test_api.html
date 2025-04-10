@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Démo API</title>
+</head>
+<body>
+<h1>Démo de l'API</h1>
+
+<!-- Conteneur pour afficher les utilisateurs récupérés via l'API -->
+<div id="utilisateurs"></div>
+
+<script>
+    // Fonction pour récupérer les utilisateurs depuis l'API
+    async function fetchUtilisateurs() {
+      try {
+        // Remplace l'URL par celle de ton API
+        const response = await fetch('http://localhost:3000/api/utilisateurs');
+        const data = await response.json();
+
+        // Affiche les utilisateurs dans la page HTML
+        const utilisateursDiv = document.getElementById('utilisateurs');
+        utilisateursDiv.innerHTML = '<h2>Liste des utilisateurs :</h2>';
+
+        data.forEach(utilisateur => {
+          utilisateursDiv.innerHTML += `<p>ID: ${utilisateur.id}, Nom: ${utilisateur.nom}, Email: ${utilisateur.email}</p>`;
+        });
+      } catch (error) {
+        console.error('Erreur lors de la récupération des données de l\'API', error);
+      }
+    }
+
+    // Appel de la fonction pour récupérer les utilisateurs
+    fetchUtilisateurs();
+</script>
+</body>
+</html>

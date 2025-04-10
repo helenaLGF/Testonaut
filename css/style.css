@@ -17,12 +17,8 @@ body {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-h1, h2, h3 {
+h1, h2 {
   color: #005580;
-}
-
-h2 {
-  margin-top: 30px;
 }
 
 ul {
@@ -63,34 +59,44 @@ ul {
   background-color: #0077aa;
 }
 
-/* Section */
-section {
+/* Style CV spécifique */
+.cv h1 i,
+.cv h2 i {
+  margin-right: 10px;
+  color: #0077aa;
+}
+
+.cv h1 {
+  text-align: center;
   margin-bottom: 40px;
 }
 
-/* Expérience */
-.exp-item {
-  margin-bottom: 20px;
+.cv section {
+  margin-bottom: 40px;
 }
 
-.exp-item h3 {
-  margin: 0;
-  font-size: 1.2em;
+.cv h3 {
+  color: #006699;
+  margin-top: 20px;
 }
 
-.exp-item ul {
-  list-style: none;
-  padding-left: 20px;
+.cv ul {
+  list-style-type: disc;
+  margin-left: 20px;
 }
 
-.exp-item ul li {
-  margin: 5px 0;
+.cv li {
+  margin-bottom: 10px;
 }
 
-/* Footer */
-footer {
-  background: #333;
-  color: white;
-  text-align: center;
-  padding: 10px;
+.cv p {
+  text-align: justify;
+}
+
+.cv strong {
+  color: #444;
+}
+
+.cv {
+  padding: 30px;
 }

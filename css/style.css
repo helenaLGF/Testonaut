@@ -30,6 +30,9 @@ ul {
 .navbar {
   background-color: #005580;
   padding: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .navbar-menu {
@@ -57,6 +60,13 @@ ul {
 .navbar-menu a:hover,
 .navbar-menu a.active {
   background-color: #0077aa;
+}
+
+/* Logo dans la navbar */
+.logo img {
+  width: 40px;
+  height: auto;
+  margin-left: 20px;
 }
 
 /* Style CV spécifique */

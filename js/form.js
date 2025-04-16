@@ -3,6 +3,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!submitBtn) return;
 
+  const hideAlertOnInput = (selector, alertId) => {
+    const el = document.querySelector(selector);
+    if (el) {
+      el.addEventListener("input", () => {
+        document.getElementById(alertId)?.classList.add("hidden");
+      });
+      el.addEventListener("change", () => {
+        document.getElementById(alertId)?.classList.add("hidden");
+      });
+    }
+  };
+
+  // Lier les événements pour masquer les alertes à la saisie
+  hideAlertOnInput("#username", "usernameAlert");
+  hideAlertOnInput("#email", "emailAlert");
+  hideAlertOnInput("#fileUpload", "fileAlert");
+
+  // Pour les boutons radios
+  const radios = document.querySelectorAll("input[name='preference']");
+  radios.forEach(r => {
+    r.addEventListener("change", () => {
+      document.getElementById("radioAlert")?.classList.add("hidden");
+    });
+  });
+
   submitBtn.addEventListener("click", function (event) {
     let valid = true;
 

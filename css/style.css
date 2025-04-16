@@ -252,3 +252,8 @@ tr:hover {
 .warning strong {
     font-weight: bold;
 }
+
+
+.hidden {
+  display: none;
+}

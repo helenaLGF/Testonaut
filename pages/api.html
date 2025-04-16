@@ -50,32 +50,85 @@
 <p>Replit est plus populaire et largement utilisé dans plusieurs communautés tech en raison de sa capacité à supporter de nombreux langages, sa plateforme robuste pour l'éducation et le prototypage, et son accès facile pour l'hébergement web dynamique.</p>
 
 url de l'api de demo : https://2f0969ab-666b-47d3-bc80-f2471b857bda-00-1usr6dq06aoec.janeway.replit.dev/api/utilisateurs
+
+
 <!-- Conteneur pour afficher les utilisateurs récupérés via l'API -->
-<div id="utilisateurs"></div>
+<!--<div id="utilisateurs"></div>-->
 
-<script>
-    // Fonction pour récupérer les utilisateurs depuis l'API
-    async function fetchUtilisateurs() {
-      try {
-        // Remplace l'URL par celle de ton API
-        const response = await fetch('https://2f0969ab-666b-47d3-bc80-f2471b857bda-00-1usr6dq06aoec.janeway.replit.dev/api/utilisateurs');
-        const data = await response.json();
+<!--<script>-->
+<!--    // Fonction pour récupérer les utilisateurs depuis l'API-->
+<!--    async function fetchUtilisateurs() {-->
+<!--      try {-->
+<!--        // Remplace l'URL par celle de ton API-->
+<!--        const response = await fetch('https://2f0969ab-666b-47d3-bc80-f2471b857bda-00-1usr6dq06aoec.janeway.replit.dev/api/utilisateurs');-->
+<!--        const data = await response.json();-->
 
-        // Affiche les utilisateurs dans la page HTML
-        const utilisateursDiv = document.getElementById('utilisateurs');
-        utilisateursDiv.innerHTML = '<h2>Liste des utilisateurs :</h2>';
+<!--        // Affiche les utilisateurs dans la page HTML-->
+<!--        const utilisateursDiv = document.getElementById('utilisateurs');-->
+<!--        utilisateursDiv.innerHTML = '<h2>Liste des utilisateurs :</h2>';-->
 
-        data.forEach(utilisateur => {
-          utilisateursDiv.innerHTML += `<p>ID: ${utilisateur.id}, Nom: ${utilisateur.nom}, Email: ${utilisateur.email}</p>`;
-        });
-      } catch (error) {
-        console.error('Erreur lors de la récupération des données de l\'API', error);
-      }
-    }
+<!--        data.forEach(utilisateur => {-->
+<!--          utilisateursDiv.innerHTML += `<p>ID: ${utilisateur.id}, Nom: ${utilisateur.nom}, Email: ${utilisateur.email}</p>`;-->
+<!--        });-->
+<!--      } catch (error) {-->
+<!--        console.error('Erreur lors de la récupération des données de l\'API', error);-->
+<!--      }-->
+<!--    }-->
 
-    // Appel de la fonction pour récupérer les utilisateurs
-    fetchUtilisateurs();
-</script>
+<!--    // Appel de la fonction pour récupérer les utilisateurs-->
+<!--    fetchUtilisateurs();-->
+<!--</script>-->
+<!--</div>-->
+
+    <!-- Conteneur pour afficher les utilisateurs -->
+    <div id="utilisateurs"></div>
+
+    <script>
+        async function fetchUtilisateurs() {
+          try {
+            const response = await fetch('https://2f0969ab-666b-47d3-bc80-f2471b857bda-00-1usr6dq06aoec.janeway.replit.dev/api/utilisateurs');
+            const data = await response.json();
+
+            const utilisateursDiv = document.getElementById('utilisateurs');
+
+            // Créer le tableau HTML
+            let tableHTML = `
+              <h2>Liste des utilisateurs :</h2>
+              <table>
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Nom</th>
+                    <th>Email</th>
+                  </tr>
+                </thead>
+                <tbody>
+            `;
+
+            // Ajouter chaque utilisateur au tableau
+            data.forEach(utilisateur => {
+              tableHTML += `
+                <tr>
+                  <td>${utilisateur.id}</td>
+                  <td>${utilisateur.nom}</td>
+                  <td>${utilisateur.email}</td>
+                </tr>
+              `;
+            });
+
+            tableHTML += `
+                </tbody>
+              </table>
+            `;
+
+            utilisateursDiv.innerHTML = tableHTML;
+          } catch (error) {
+            console.error('Erreur lors de la récupération des données de l\'API', error);
+          }
+        }
+
+        fetchUtilisateurs();
+    </script>
 </div>
 </body>
 </html>

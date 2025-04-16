@@ -17,8 +17,12 @@ body {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-h1, h2 {
+h1, h2, h3 {
   color: #005580;
+}
+
+h2 {
+  margin-top: 30px;
 }
 
 ul {
@@ -30,9 +34,6 @@ ul {
 .navbar {
   background-color: #005580;
   padding: 10px 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
 
 .navbar-menu {
@@ -62,51 +63,34 @@ ul {
   background-color: #0077aa;
 }
 
-/* Logo dans la navbar */
-.logo img {
-  width: 40px;
-  height: auto;
-  margin-left: 20px;
+/* Section */
+section {
+  margin-bottom: 40px;
 }
 
-/* Style CV spécifique */
-.cv h1 i,
-.cv h2 i {
-  margin-right: 10px;
-  color: #0077aa;
+/* Expérience */
+.exp-item {
+  margin-bottom: 20px;
 }
 
-.cv h1 {
+.exp-item h3 {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.exp-item ul {
+  list-style: none;
+  padding-left: 20px;
+}
+
+.exp-item ul li {
+  margin: 5px 0;
+}
+
+/* Footer */
+footer {
+  background: #333;
+  color: white;
   text-align: center;
-  margin-bottom: 40px;
-}
-
-.cv section {
-  margin-bottom: 40px;
-}
-
-.cv h3 {
-  color: #006699;
-  margin-top: 20px;
-}
-
-.cv ul {
-  list-style-type: disc;
-  margin-left: 20px;
-}
-
-.cv li {
-  margin-bottom: 10px;
-}
-
-.cv p {
-  text-align: justify;
-}
-
-.cv strong {
-  color: #444;
-}
-
-.cv {
-  padding: 30px;
+  padding: 10px;
 }

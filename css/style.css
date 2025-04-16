@@ -94,3 +94,8 @@ footer {
   text-align: center;
   padding: 10px;
 }
+
+.logo {
+  width: 50px;
+  height: auto;
+}

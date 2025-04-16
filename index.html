@@ -3,131 +3,89 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- Meta Description -->
-  <meta name="description" content="Mini IDE TestAuto - Démo avec Selenium, Jenkins, API Testing et Playwright. Découvrez des exemples de tests automatisés et d'intégration continue dans un environnement pratique.">
-
-  <!-- Meta Robots -->
-  <meta name="robots" content="index, follow">
-
-  <!-- Vérification Ahrefs -->
-  <meta name="ahrefs-site-verification" content="28b8bbbbe319cab468b5a11b6246169921145836b0e90d9d2aa62dbf04aefcab">
-
-  <!-- Title SEO -->
   <title>Mini IDE TestAuto - Démo</title>
-
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HKQRGZEP4X"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-HKQRGZEP4X');
-  </script>
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://analytics.ahrefs.com/analytics.js" data-key="bphBLUicfWDBLKWXKSzJFg" async></script>
-
-  <!-- Favicon -->
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-
-  <!-- Open Graph for social sharing -->
-  <meta property="og:title" content="Mini IDE TestAuto - Démo">
-  <meta property="og:description" content="Mini IDE TestAuto - Démo avec Selenium, Jenkins, API Testing et Playwright. Découvrez des exemples de tests automatisés et d'intégration continue.">
-  <meta property="og:image" content="images/og-image.jpg">
-  <meta property="og:url" content="https://ton-portfolio.github.io">
-  <meta property="og:type" content="website">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Mini IDE TestAuto - Démo">
-  <meta name="twitter:description" content="Mini IDE TestAuto - Démo avec Selenium, Jenkins, API Testing et Playwright. Découvrez des exemples de tests automatisés et d'intégration continue.">
-  <meta name="twitter:image" content="images/twitter-image.jpg">
-
   <link rel="stylesheet" href="css/style.css" />
-  <script src="js/script.js" defer></script>
-
 </head>
 <body>
-<!-- Barre de navigation -->
-<nav class="navbar">
-  <ul class="navbar-menu">
-    <li><a href="#">Home</a></li>
-    <li><a href="#">Test avec Selenium</a></li>
-    <li><a href="#">Builds Jenkins</a></li>
-    <li><a href="#">Github</a></li>
-    <li><a href="pages/api.html">Test API</a></li>
-    <li><a href="#">SEO</a></li>
-    <li><a href="pages/cv.html">Curriculum vitae</a></li>
-    <li><a href="#">Test avec Playwright</a></li>
-  </ul>
-</nav>
+  <!-- Barre de navigation -->
+  <nav class="navbar">
+    <ul class="navbar-menu">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Test avec Selenium</a></li>
+      <li><a href="#">Builds Jenkins</a></li>
+      <li><a href="#">Github</a></li>
+      <li><a href="pages/api.html">Test API</a></li>
+      <li><a href="#">SEO</a></li>
+      <li><a href="pages/cv.html">Curriculum vitae</a></li>
+      <li><a href="#">Test avec Playwright</a></li>
+    </ul>
+  </nav>
 
-<!-- Conteneur principal -->
-<div class="container">
-  <!-- Logo -->
-  <div class="logo">
-    <img src="images/logo2.png" alt="TestAuto Logo" />
-  </div>
-  <h2>Démo TestAuto – Mini IDE</h2>
-
-  <!-- Section des Inputs -->
-  <section class="form-section">
-    <h3>Saisie de données</h3>
-
-    <!-- Nom d'utilisateur -->
-    <label for="username">Nom d'utilisateur :</label>
-    <input type="text" id="username" name="username" placeholder="Votre nom ici" />
-    <div id="usernameAlert" class="alert hidden">Le nom d'utilisateur est requis !</div>
-
-    <!-- Email -->
-    <label for="email">Email :</label>
-    <input type="email" id="email" name="email" placeholder="exemple@mail.com" />
-    <div id="emailAlert" class="alert hidden">Veuillez entrer un email valide.</div>
-  </section>
-
-  <!-- Section des Options -->
-  <section class="form-section">
-    <h3>Options</h3>
-
-    <!-- Boutons Radio -->
-    <label>Choisissez votre préférence :</label>
-    <div class="radio-group">
-      <input type="radio" id="option1" name="preference" value="Option A" />
-      <label for="option1">Option A</label><br />
-      <input type="radio" id="option2" name="preference" value="Option B" />
-      <label for="option2">Option B</label><br />
-      <input type="radio" id="option3" name="preference" value="Option C" />
-      <label for="option3">Option C</label>
+  <!-- Conteneur principal -->
+  <div class="container">
+    <!-- Logo -->
+    <div class="logo">
+      <img src="images/logo2.png" class="logo" alt="Logo Helena Le Goff">
     </div>
-    <div id="radioAlert" class="alert hidden">Veuillez choisir une option.</div>
+    <h2>Démo TestAuto – Mini IDE</h2>
 
-    <!-- Checkboxes -->
-    <label>Options supplémentaires :</label><br />
-    <input type="checkbox" id="check1" name="checkbox" />
-    <label for="check1">Option A</label><br />
-    <input type="checkbox" id="check2" name="checkbox" />
-    <label for="check2">Option B</label><br />
-    <input type="checkbox" id="check3" name="checkbox" />
-    <label for="check3">Option C</label><br />
-  </section>
+    <!-- Section des Inputs -->
+    <section class="form-section">
+      <h3>Saisie de données</h3>
 
-  <!-- Section de téléchargement de fichier -->
-  <section class="form-section">
-    <h3>Upload de fichier</h3>
+      <!-- Nom d'utilisateur -->
+      <label for="username">Nom d'utilisateur :</label>
+      <input type="text" id="username" name="username" placeholder="Votre nom ici" />
+      <div id="usernameAlert" class="alert hidden">Le nom d'utilisateur est requis !</div>
 
-    <label for="fileUpload">Sélectionnez un fichier (PDF max 10 Mo) :</label>
-    <input type="file" id="fileUpload" name="fileUpload" accept="application/pdf" />
-    <div id="fileAlert" class="alert hidden">Seuls les fichiers PDF de moins de 10 Mo sont acceptés.</div>
-  </section>
+      <!-- Email -->
+      <label for="email">Email :</label>
+      <input type="email" id="email" name="email" placeholder="exemple@mail.com" />
+      <div id="emailAlert" class="alert hidden">Veuillez entrer un email valide.</div>
+    </section>
 
-  <!-- Section de soumission du formulaire -->
-  <section class="form-section">
-    <button type="submit" id="submitBtn">Soumettre</button>
-    <div id="success" class="success-message hidden">Formulaire soumis avec succès !</div>
-  </section>
-</div>
+    <!-- Section des Options -->
+    <section class="form-section">
+      <h3>Options</h3>
 
-<script src="js/script.js"></script>
+      <!-- Boutons Radio -->
+      <label>Choisissez votre préférence :</label>
+      <div class="radio-group">
+        <input type="radio" id="option1" name="preference" value="Option A" />
+        <label for="option1">Option A</label><br />
+        <input type="radio" id="option2" name="preference" value="Option B" />
+        <label for="option2">Option B</label><br />
+        <input type="radio" id="option3" name="preference" value="Option C" />
+        <label for="option3">Option C</label>
+      </div>
+      <div id="radioAlert" class="alert hidden">Veuillez choisir une option.</div>
+
+      <!-- Checkboxes -->
+      <label>Options supplémentaires :</label><br />
+      <input type="checkbox" id="check1" name="checkbox" />
+      <label for="check1">Option A</label><br />
+      <input type="checkbox" id="check2" name="checkbox" />
+      <label for="check2">Option B</label><br />
+      <input type="checkbox" id="check3" name="checkbox" />
+      <label for="check3">Option C</label><br />
+    </section>
+
+    <!-- Section de téléchargement de fichier -->
+    <section class="form-section">
+      <h3>Upload de fichier</h3>
+
+      <label for="fileUpload">Sélectionnez un fichier (PDF max 10 Mo) :</label>
+      <input type="file" id="fileUpload" name="fileUpload" accept="application/pdf" />
+      <div id="fileAlert" class="alert hidden">Seuls les fichiers PDF de moins de 10 Mo sont acceptés.</div>
+    </section>
+
+    <!-- Section de soumission du formulaire -->
+    <section class="form-section">
+      <button type="submit" id="submitBtn">Soumettre</button>
+      <div id="success" class="success-message hidden">Formulaire soumis avec succès !</div>
+    </section>
+  </div>
+
+  <script src="js/script.js"></script>
 </body>
 </html>

@@ -21,11 +21,14 @@
         <li><a href="#">Test avec Playwright</a></li>
     </ul>
 </nav>
+<header>
+<h1>Démo de l'API - Liste des Utilisateurs</h1>
+</header>
 <div class="container api">
 
-<h1>Démo de l'API</h1>
+<h2>Développement collaboratif</h2>
 
-<h4>Replit</h4>
+<h3>Replit</h3>
    <p> Popularité : Très populaire, notamment parmi les développeurs débutants et intermédiaires, ainsi que les communautés de code open-source.
 
     Support multi-langages : Replit prend en charge plus de 50 langages, y compris Python, JavaScript (Node.js), Ruby, C++, etc.</p>
@@ -46,12 +49,13 @@
 
     URL publique : Chaque projet a une URL publique accessible immédiatement.</p>
 
-<h4>  Résumé :</h4>
+<h5>  Résumé :</h5>
 <p>Replit est plus populaire et largement utilisé dans plusieurs communautés tech en raison de sa capacité à supporter de nombreux langages, sa plateforme robuste pour l'éducation et le prototypage, et son accès facile pour l'hébergement web dynamique.</p>
 
     <p>url de l'api de demo : https://2f0969ab-666b-47d3-bc80-f2471b857bda-00-1usr6dq06aoec.janeway.replit.dev/api/utilisateurs</p>
-    <p>=> le tableau affichera les données de l'api seulement si l'app est runnée sur replit ;) only for demo</p>
-
+    <div class="warning">
+        <strong>Avertissement :</strong> le tableau affichera les données de l'api seulement si l'app est runnée sur replit ;) only for demo
+    </div>
 
 <!-- Conteneur pour afficher les utilisateurs récupérés via l'API -->
 <!--<div id="utilisateurs"></div>-->
@@ -204,9 +208,14 @@
 <!--        fetchUtilisateurs();-->
 <!--    </script>-->
 
+
+
     <section>
-        <!-- Formulaire de recherche -->
-        <input type="text" id="rechercheNom" placeholder="Rechercher par nom..." oninput="filtrerUtilisateurs()">
+        <!-- Zone de recherche dans le tableau -->
+        <div>
+            <input type="text" id="rechercheNom" placeholder="Rechercher par nom..." oninput="filtrerUtilisateurs()" onkeydown="verifierEntree(event)">
+            <button id="rechercheBtn" onclick="filtrerUtilisateurs()">OK</button>
+        </div>
 
         <!-- Affichage du tableau des utilisateurs -->
         <div id="utilisateurs">
@@ -214,7 +223,7 @@
         </div>
     </section>
 
-    <script src="../js/script.js"></script>
+    <script src="js/script.js"></script>
 </div>
 </body>
 </html>

@@ -17,6 +17,25 @@ body {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
+header {
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 1200px; /* Ajuste cette largeur selon ton design */
+    text-align: justify;
+}
+
+header h1 {
+    text-align: center; /* Centrer le titre du header */
+    margin-bottom: 10px;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
 h1, h2, h3 {
   color: #005580;
 }

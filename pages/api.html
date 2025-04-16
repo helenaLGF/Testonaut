@@ -81,50 +81,123 @@ url de l'api de demo : https://2f0969ab-666b-47d3-bc80-f2471b857bda-00-1usr6dq06
 <!--</div>-->
 
     <!-- Conteneur pour afficher les utilisateurs -->
+
+<!--    <script>-->
+<!--        async function fetchUtilisateurs() {-->
+<!--          try {-->
+<!--            const response = await fetch('https://2f0969ab-666b-47d3-bc80-f2471b857bda-00-1usr6dq06aoec.janeway.replit.dev/api/utilisateurs');-->
+<!--            const data = await response.json();-->
+
+<!--            const utilisateursDiv = document.getElementById('utilisateurs');-->
+
+<!--            // Créer le tableau HTML-->
+<!--            let tableHTML = `-->
+<!--              <h2>Liste des utilisateurs :</h2>-->
+<!--              <table>-->
+<!--                <thead>-->
+<!--                  <tr>-->
+<!--                    <th>ID</th>-->
+<!--                    <th>Nom</th>-->
+<!--                    <th>Email</th>-->
+<!--                  </tr>-->
+<!--                </thead>-->
+<!--                <tbody>-->
+<!--            `;-->
+
+<!--            // Ajouter chaque utilisateur au tableau-->
+<!--            data.forEach(utilisateur => {-->
+<!--              tableHTML += `-->
+<!--                <tr>-->
+<!--                  <td>${utilisateur.id}</td>-->
+<!--                  <td>${utilisateur.nom}</td>-->
+<!--                  <td>${utilisateur.email}</td>-->
+<!--                </tr>-->
+<!--              `;-->
+<!--            });-->
+
+<!--            tableHTML += `-->
+<!--                </tbody>-->
+<!--              </table>-->
+<!--            `;-->
+
+<!--            utilisateursDiv.innerHTML = tableHTML;-->
+<!--          } catch (error) {-->
+<!--            console.error('Erreur lors de la récupération des données de l\'API', error);-->
+<!--          }-->
+<!--        }-->
+
+<!--        fetchUtilisateurs();-->
+<!--    </script>-->
+
+
+    <!-- Zone de recherche -->
+    <div id="recherche-container">
+        <input type="text" id="rechercheNom" placeholder="Rechercher un nom...">
+        <button onclick="filtrerUtilisateurs()">OK</button>
+    </div>
+
+    <!-- Conteneur du tableau -->
     <div id="utilisateurs"></div>
 
     <script>
+        let utilisateursData = []; // Stocke les données d'origine
+        let triAsc = { id: true, nom: true, email: true }; // Ordre du tri
+
         async function fetchUtilisateurs() {
           try {
             const response = await fetch('https://2f0969ab-666b-47d3-bc80-f2471b857bda-00-1usr6dq06aoec.janeway.replit.dev/api/utilisateurs');
             const data = await response.json();
-
-            const utilisateursDiv = document.getElementById('utilisateurs');
-
-            // Créer le tableau HTML
-            let tableHTML = `
-              <h2>Liste des utilisateurs :</h2>
-              <table>
-                <thead>
-                  <tr>
-                    <th>ID</th>
-                    <th>Nom</th>
-                    <th>Email</th>
-                  </tr>
-                </thead>
-                <tbody>
-            `;
-
-            // Ajouter chaque utilisateur au tableau
-            data.forEach(utilisateur => {
-              tableHTML += `
-                <tr>
-                  <td>${utilisateur.id}</td>
-                  <td>${utilisateur.nom}</td>
-                  <td>${utilisateur.email}</td>
-                </tr>
-              `;
-            });
-
-            tableHTML += `
-                </tbody>
-              </table>
-            `;
-
-            utilisateursDiv.innerHTML = tableHTML;
+            utilisateursData = data;
+            afficherTableau(utilisateursData);
           } catch (error) {
-            console.error('Erreur lors de la récupération des données de l\'API', error);
+            console.error('Erreur API', error);
           }
+        }
+
+        function afficherTableau(data) {
+          const utilisateursDiv = document.getElementById('utilisateurs');
+
+          let tableHTML = `
+            <table>
+              <thead>
+                <tr>
+                  <th onclick="trierPar('id')">ID 🔁</th>
+                  <th onclick="trierPar('nom')">Nom 🔁</th>
+                  <th onclick="trierPar('email')">Email 🔁</th>
+                </tr>
+              </thead>
+              <tbody>
+          `;
+
+          data.forEach(utilisateur => {
+            tableHTML += `
+              <tr>
+                <td>${utilisateur.id}</td>
+                <td>${utilisateur.nom}</td>
+                <td>${utilisateur.email}</td>
+              </tr>
+            `;
+          });
+
+          tableHTML += `</tbody></table>`;
+          utilisateursDiv.innerHTML = tableHTML;
+        }
+
+        function filtrerUtilisateurs() {
+          const recherche = document.getElementById('rechercheNom').value.toLowerCase();
+          const filtres = utilisateursData.filter(u => u.nom.toLowerCase().includes(recherche));
+          afficherTableau(filtres);
+        }
+
+        function trierPar(champ) {
+          const ordre = triAsc[champ] ? 1 : -1;
+          utilisateursData.sort((a, b) => {
+            if (a[champ] < b[champ]) return -1 * ordre;
+            if (a[champ] > b[champ]) return 1 * ordre;
+            return 0;
+          });
+          triAsc[champ] = !triAsc[champ];
+          afficherTableau(utilisateursData);
         }
 
         fetchUtilisateurs();

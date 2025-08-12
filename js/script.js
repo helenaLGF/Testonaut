@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <th onclick="trierPar('id')">ID 🔁</th>
             <th onclick="trierPar('nom')">Nom 🔁</th>
             <th onclick="trierPar('email')">Email 🔁</th>
-            <th onclick="trierPar('job')">Email 🔁</th>
+            <th onclick="trierPar('job')">Job 🔁</th>
 
           </tr>
         </thead>

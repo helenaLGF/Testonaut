@@ -24,6 +24,8 @@ document.addEventListener("DOMContentLoaded", () => {
             <th onclick="trierPar('id')">ID 🔁</th>
             <th onclick="trierPar('nom')">Nom 🔁</th>
             <th onclick="trierPar('email')">Email 🔁</th>
+            <th onclick="trierPar('job')">Email 🔁</th>
+
           </tr>
         </thead>
         <tbody>
@@ -35,6 +37,8 @@ document.addEventListener("DOMContentLoaded", () => {
           <td>${utilisateur.id}</td>
           <td>${utilisateur.nom}</td>
           <td>${utilisateur.email}</td>
+          <td>${utilisateur.job}</td>
+
         </tr>
       `;
     });

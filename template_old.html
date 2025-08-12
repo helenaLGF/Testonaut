@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Testonaut</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<header>
+    <div class="container">
+        <h1>Bienvenue sur Testonaut</h1>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="images/logo2.png" class="logo" alt="Logo Helena Le Goff">
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Test avec Selenium</a></li>
+                <li><a href="#">Builds Jenkins</a></li>
+                <li><a href="#">Github</a></li>
+                <li><a href="pages/api.html">Test API</a></li>
+                <li><a href="#">SEO</a></li>
+                <li><a href="pages/cv.html">Curriculum vitae</a></li>
+                <li><a href="#">Test avec Playwright</a></li>
+                <li class="has-submenu">
+                    <a href="#">Test de ss menu</a>
+                    <ul class="submenu">
+                        <li><a href="#">Sous-menu 1</a></li>
+                        <li><a href="#">Sous-menu 2</a></li>
+                        <li><a href="#">Sous-menu 3</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main class="container">
+    <section>
+        <h2>À propos</h2>
+        <p>Bienvenue sur mon site dédié aux tests logiciels. Vous trouverez ici mes travaux autour de Selenium, Jenkins, API, SEO et bien plus encore.</p>
+    </section>
+
+    <section id="utilisateurs">
+        <h2>Utilisateurs</h2>
+        <div id="recherche-container">
+            <input type="text" id="searchInput" placeholder="Rechercher...">
+            <button onclick="rechercher()">Rechercher</button>
+        </div>
+        <table>
+            <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Email</th>
+            </tr>
+            </thead>
+            <tbody id="tableBody">
+            <!-- Données dynamiques ici -->
+            </tbody>
+        </table>
+    </section>
+
+    <section class="select-container">
+        <label for="framework">Choisissez un framework :</label>
+        <select id="framework">
+            <option value="selenium">Selenium</option>
+            <option value="playwright">Playwright</option>
+            <option value="cypress">Cypress</option>
+        </select>
+    </section>
+
+    <div class="alert success hidden">Opération réussie !</div>
+    <div class="alert error hidden">Une erreur est survenue.</div>
+    <div class="alert info hidden">Voici une information importante.</div>
+</main>
+
+<footer>
+    <p>&copy; 2025 Helena Le Goff - Testonaut</p>
+</footer>
+
+<script>
+    function rechercher() {
+      const filtre = document.getElementById("searchInput").value.toLowerCase();
+      const lignes = document.querySelectorAll("#tableBody tr");
+      lignes.forEach(ligne => {
+        const texte = ligne.textContent.toLowerCase();
+        ligne.style.display = texte.includes(filtre) ? "" : "none";
+      });
+    }
+</script>
+</body>
+</html>
